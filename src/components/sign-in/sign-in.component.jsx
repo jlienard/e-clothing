@@ -27,8 +27,8 @@ const SignIn = () => {
 
   return (
     <div className='sign-in'>
-      <h2>I already have an account</h2>
-      <span>Sign in with your email and password</span>
+      <h2>J'ai déjà un compte</h2>
+      <span>Se connecter avec email et mot de passe</span>
 
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -44,12 +44,12 @@ const SignIn = () => {
           type='password'
           value={password}
           handleChange={handleChange}
-          label='password'
+          label='mot de passe'
           required
         />
         <div className='buttons'>
-          <CustomButton type='submit'> Sign in </CustomButton>
-          <CustomButton onClick={signInWithGoogle} isGoogleSignIn> Sign in with Google </CustomButton>
+          <CustomButton type='submit'> Se connecter </CustomButton>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignIn> Compte Google </CustomButton>
         </div>
       </form>
     </div>

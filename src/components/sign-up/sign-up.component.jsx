@@ -17,6 +17,11 @@ const SignUp = () => {
 
   const {displayName, email, password, confirmPassword} = userInfo;
 
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setUserInfo({ ...userInfo, [name]: value });
+  };
+
   const handleSubmit = event => {
     event.preventDefault();
 
@@ -27,24 +32,20 @@ const SignUp = () => {
 
   const { user } = auth.createUserWithEmailAndPassword(email, password);
     createUserProfileDocument(user, { displayName });
-  };
-
-  const handleChange = event => {
-    const { name, value } = event.target;
-    setUserInfo({ ...userInfo, [name]: value });
+    console.log(createUserProfileDocument);
   };
 
   return(
     <div className='sign-up'>
-      <h2 className='title'>I do not have a account</h2>
-      <span>Sign up with your email and password</span>
+      <h2 className='title'>Je n'ai pas de compte</h2>
+      <span>S'inscrire avec email et mot de passe</span>
     <form className='sign-up-form' onSubmit={handleSubmit}>
       <FormInput
         type='text'
         name='displayName'
         value={displayName}
         onChange={handleChange}
-        label='Display Name'
+        label="nom d'utilisateur"
         required
       />
       <FormInput
@@ -52,7 +53,7 @@ const SignUp = () => {
         name='email'
         value={email}
         onChange={handleChange}
-        label='Email'
+        label='email'
         required
       />
       <FormInput
@@ -60,7 +61,7 @@ const SignUp = () => {
         name='password'
         value={password}
         onChange={handleChange}
-        label='Password'
+        label='mot de passe'
         required
       />
       <FormInput
@@ -68,10 +69,10 @@ const SignUp = () => {
         name='confirmPassword'
         value={confirmPassword}
         onChange={handleChange}
-        label='Confirm Password'
+        label='confirmer mot de passe'
         required
       />
-      <CustomButton type='submit'>SIGN UP</CustomButton>
+      <CustomButton type='submit'>s'inscrire</CustomButton>
     </form>
     </div>
   );

@@ -18,14 +18,14 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
         <CartItem key={cartItem.id} item={cartItem} />
       ))
     ) : (
-      <span className='empty-message'>Your cart is empty</span>
+      <span className='empty-message'>Votre panier est vide</span>
     )}
     </div>
     <CustomButton onClick={() => {
       history.push('/checkout');
       dispatch(toggleCartHidden())
     }}>
-      GO TO CHECKOUT
+      VOIR PANIER
     </CustomButton>
   </div>
 );

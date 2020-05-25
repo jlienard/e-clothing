@@ -17,11 +17,13 @@ const StripeCheckoutButton = ({ price }) => {
       billingAdress
       shippingAddress
       image='https://sendeyo.com/up/d/f3eb2117da'
-      description={`Votre total est $${price}`}
+      description={`Votre total est de ${price}€`}
       amount={priceForStripe}
       panelLabel='Payer Maintenant'
       token={onToken}
       stripeKey={publishableKey}
+      currency='EUR'
+      country='FR'
     />
   );
 };
