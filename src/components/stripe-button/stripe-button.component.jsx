@@ -16,7 +16,7 @@ const StripeCheckoutButton = ({ price }) => {
       name='E-clothing'
       billingAdress
       shippingAddress
-      image='https://sendeyo.com/up/d/f3eb2117da'
+      // image='https://sendeyo.com/up/d/f3eb2117da'
       description={`Votre total est de ${price}€`}
       amount={priceForStripe}
       panelLabel='Payer Maintenant'
